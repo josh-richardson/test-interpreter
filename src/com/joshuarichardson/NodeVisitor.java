@@ -1,5 +1,9 @@
 package com.joshuarichardson;
 
+import com.joshuarichardson.AST.AST;
+import com.joshuarichardson.AST.BinOp;
+import com.joshuarichardson.AST.UnaryOp;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -16,14 +20,17 @@ public class NodeVisitor {
 
     public String visit(AST node) {
         try {
-            String methodName = "visit_" + node.getClass().getSimpleName();
-            Method m = getClass().getMethod(methodName, Class.forName(node.getClass().getName()));
-            m.setAccessible(true);
-            return (String) m.invoke(this, node);
+            if (node instanceof BinOp || node instanceof Number || node instanceof UnaryOp) {
+                String methodName = "visit_" + node.getClass().getSimpleName();
+                Method m = getClass().getMethod(methodName, Class.forName(node.getClass().getName()));
+                m.setAccessible(true);
+                return String.valueOf(m.invoke(this, node));
+            }
         } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return null;
+        System.out.println("Failed visit");
+        return "0";
     }
 
 

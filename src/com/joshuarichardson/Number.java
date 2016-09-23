@@ -1,5 +1,7 @@
 package com.joshuarichardson;
 
+import com.joshuarichardson.AST.AST;
+
 /**
  * Created by Joshua on 21/09/2016.
  */
@@ -26,6 +28,6 @@ public class Number extends AST {
 
     @Override
     public String toString() {
-        return token.getType().getName() + ", " + tokenValue;
+        return "Number: {" + tokenValue + "} ";
     }
 }

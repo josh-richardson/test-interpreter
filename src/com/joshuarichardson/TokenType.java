@@ -5,12 +5,26 @@ package com.joshuarichardson;
  */
 public enum TokenType {
     INTEGER("INTEGER"),
+    REAL("REAL"),
+    INTEGER_CONST("INTEGER_CONST"),
+    REAL_CONST("REAL_CONST"),
     PLUS("PLUS"),
     MINUS("MINUS"),
     MULTIPLY("MULTIPLY"),
-    DIVIDE("DIVIDE"),
+    INTEGER_DIVIDE("INTEGER_DIVIDE"),
+    FLOAT_DIVIDE("FLOAT_DIVIDE"),
     LPAREN("("),
     RPAREN(")"),
+    ID("ID"),
+    ASSIGN(":="),
+    BEGIN("BEGIN"),
+    END("END"),
+    SEMI("SEMI"),
+    DOT("DOT"),
+    PROGRAM("PROGRAM"),
+    VAR("VAR"),
+    COLON("COLON"),
+    COMMA("COMMA"),
     EOF("EOF");
 
 
