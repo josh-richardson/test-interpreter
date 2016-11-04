@@ -66,7 +66,7 @@ public class Parser {
             varNodes.add(new Var(currentToken));
         }
         eat(TokenType.COLON);
-        Type typeNode = (Type) typeSpec();
+        Symbol typeNode = (Symbol) typeSpec();
         ArrayList<VarDecl> varDeclarations = new ArrayList<>();
         varNodes.stream().map(x -> new VarDecl(x, typeNode)).forEach(varDeclarations::add);
         return varDeclarations;
@@ -82,7 +82,7 @@ public class Parser {
         } else {
             eat(TokenType.REAL);
         }
-        return new Type(token);
+        return new Symbol(token);
     }
 
     private AST compoundStatement() {

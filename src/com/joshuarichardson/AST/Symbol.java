@@ -5,12 +5,12 @@ import com.joshuarichardson.Token;
 /**
  * Created by Joshua on 23/09/2016.
  */
-public class Type extends AST {
+public class Symbol extends AST {
 
 
     private final Token token;
     private final String value;
-    public Type(Token token) {
+    public Symbol(Token token) {
         this.value = token.getValue();
         this.token = token;
     }

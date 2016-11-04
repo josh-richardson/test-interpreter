@@ -6,10 +6,10 @@ package com.joshuarichardson.AST;
 public class VarDecl extends AST{
 
 
-    private final AST varNode;
-    private final AST typeNode;
+    private final Var varNode;
+    private final Symbol typeNode;
 
-    public VarDecl(AST varNode, AST typeNode) {
+    public VarDecl(Var varNode, Symbol typeNode) {
 
         this.varNode = varNode;
         this.typeNode = typeNode;
@@ -21,11 +21,11 @@ public class VarDecl extends AST{
         return null;
     }
 
-    public AST getVarNode() {
+    public Var getVarNode() {
         return varNode;
     }
 
-    public AST getTypeNode() {
+    public Symbol getTypeNode() {
         return typeNode;
     }
 }
